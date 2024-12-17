@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetter</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Vetter</h1>
+
+        <!-- Search for Animal Section -->
+        <section class="mt-4">
+            <h2>Search for an Animal</h2>
+            <form method="POST" action="{{ url_for('search_animal') }}">
+                {{ form.hidden_tag() }}
+                <div class="mb-3">
+                    {{ form.microchip_id.label(class="form-label") }}
+                    {{ form.microchip_id(class="form-control", placeholder="Enter microchip Id") }}
+                    {% for error in form.microchip_id.errors %}
+                        <div class="text-danger">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="mb-3">
+                    {{ form.owner.label(class="form-label") }}
+                    {{ form.owner(class="form-control", placeholder="Enter owner name") }}
+                    {% for error in form.owner.errors %}
+                        <div class="text-danger">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                {{ form.submit(class="btn btn-primary") }}
+            </form>
+            {% if search_results %}
+            <div id="search-results" class="mt-4">
+                <h3>Search Results</h3>
+                <ul>
+                    {% for result in search_results %}
+                    <li>
+                        Pet Name: {{ result.animalName }}, 
+                        Microchip ID: {{ result.microchipId }}, 
+                        Age: {{ result.age }} years, 
+                        Weight: {{ result.weight }} kg, 
+                        Owner: {{ result.owner }}
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        </section>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div>
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+
+        <!-- Add Animal Section -->
+        <section class="mt-5">
+            <h2>Add an Animal</h2>
+            <form method="POST" action="{{ url_for('add_animal') }}">
+                <div class="mb-3">
+                    <label for="animal-name" class="form-label">Animal Name</label>
+                    <input type="text" id="animal-name" name="animal_name" class="form-control" placeholder="Enter animal name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="animal-owner" class="form-label">Owner Name</label>
+                    <select id="animal-owner" name="owner_name" class="form-select" required>
+                        {% for owner in owners %}
+                            <option value="{{ owner }}">{{ owner }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="microchip-id" class="form-label">Microchip Id</label>
+                    <input type="text" id="animal-Id" name="microchip_id" class="form-control" placeholder="Enter animal Id" required>
+                </div>
+                <div class="mb-3">
+                    <label for="animal-type" class="form-label">Animal Type</label>
+                    <select id="animal-type" name="animal_type" class="form-select" required>
+                        <option value="Snake">Snake</option>
+                        <option value="Spider">Spider</option>
+                        <option value="Bird">Bird</option>
+                        <option value="Cat">Cat</option>
+                        <option value="Dog">Dog</option>
+                        <option value="Fish">Fish</option>
+                        <option value="GuineaPig">Guinea Pig</option>
+                        <option value="Horse">Horse</option>
+                        <option value="Rabbit">Rabbit</option>
+                        <option value="Rat">Rat</option>
+                        <option value="Reptile">Reptile</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success">Add Animal</button>
+            </form>
+        </section>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

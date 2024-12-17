@@ -1,0 +1,1060 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care/"
+     xml:base="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Veterinary_Care="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care">
+        <rdfs:comment>An ontology to assis veterinarians in their dailty routines</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Affects -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Affects">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#IsAffectedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Illness"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Animal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#AnimalHasVisit -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#AnimalHasVisit">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Animal"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Visit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Covers -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Covers">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#InsurancePlan"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Treatment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#IsAffectedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#IsAffectedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Animal"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Illness"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#IsLocatedAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#IsLocatedAt">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VeterinaryClinic"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#IsOwnedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#IsOwnedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Owns"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Animal"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Owner"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#IsProvidedServiceBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#IsProvidedServiceBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#ProvidesServiceTo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Animal"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VeterinaryClinic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#OfferedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#OfferedBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#InsurancePlan"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#InsuranceCompany"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Owns -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Owns">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Owner"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Animal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#PerformedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#PerformedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Treatment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Veterinarian"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#ProvidesServiceTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#ProvidesServiceTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VeterinaryClinic"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Animal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#ResidesAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#ResidesAt">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Owner"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#TreatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#TreatedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Illness"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Treatment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Treats -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Treats">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Treatment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Illness"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VetHasVisit -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VetHasVisit">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Veterinarian"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Visit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VisitEnvolvesTreatment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VisitEnvolvesTreatment">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Treatment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VisitIsForAnimal -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VisitIsForAnimal">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Animal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VisitLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VisitLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VeterinaryClinic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VisitReason -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VisitReason">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Illness"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VisitedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VisitedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Veterinarian"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#WorksAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#WorksAt">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Veterinarian"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VeterinaryClinic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Address -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Address">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Age -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Age">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Animal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#AnimalId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#AnimalId">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Animal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#CoverageAmount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#CoverageAmount">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#InsurancePlan"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Dosage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Dosage">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Email -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Email">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#HealthStatus -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#HealthStatus">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Animal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#IllnessName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#IllnessName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Illness"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#IllnessSeverity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#IllnessSeverity">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Illness"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#LicenseNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#LicenseNumber">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#MedicationName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#MedicationName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Treatment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#MicrochipId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#MicrochipId">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Animal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#OwnerName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#OwnerName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Owner"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#PhoneNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#PhoneNumber">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Owner"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#PolicyNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#PolicyNumber">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#InsurancePlan"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#PremiumCost -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#PremiumCost">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#SeverityLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#SeverityLevel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Illness"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Specialization -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Specialization">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Veterinarian"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Symptoms -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Symptoms">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Illness"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#TreatmentCost -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#TreatmentCost">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Treatment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#TreatmentName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#TreatmentName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Treatment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VetName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VetName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Veterinarian"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VisitDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VisitDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VisitDuration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VisitDuration">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VisitNotes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VisitNotes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VisitStatus -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VisitStatus">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Visit"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Weight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Weight">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Animal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#YearsOfExperience -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#YearsOfExperience">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Veterinarian"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Animal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Animal">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#AnimalHasVisit"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Visit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#IsOwnedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Owner"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Age"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#AnimalId"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Weight"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Bird -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Bird">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#NormalPets"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Cat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Cat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#NormalPets"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#DangerousPets -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#DangerousPets">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Pet"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#NormalPets"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Dog -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Dog">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#NormalPets"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Fish -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Fish">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#NormalPets"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#FreshWater -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#FreshWater">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Fish"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#SaltWater"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Gheco -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Gheco">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Reptiles"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Lizard"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#GuineaPig -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#GuineaPig">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#NormalPets"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#HealthCheck -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#HealthCheck"/>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Horse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Horse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#NormalPets"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Illness -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Illness">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Affects"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Animal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#TreatedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Treatment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#InsuranceCompany -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#InsuranceCompany"/>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#InsurancePlan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#InsurancePlan"/>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Lizard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Lizard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Reptiles"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Location"/>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#NormalPets -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#NormalPets">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Pet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Owner -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Owner">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Owns"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Animal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#ResidesAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Location"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Email"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#OwnerName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#PhoneNumber"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Pet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Pet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Rabbit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Rabbit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#NormalPets"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Rat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Rat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#NormalPets"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Reptiles -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Reptiles">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#NormalPets"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#RuralLocation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#RuralLocation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Location"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#UrbanLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#SaltWater -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#SaltWater">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Fish"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Snake -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Snake">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#DangerousPets"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Spider"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Spider -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Spider">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#DangerousPets"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Treatment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Treatment">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Treats"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Illness"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#UrbanLocation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#UrbanLocation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Veterinarian -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Veterinarian">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VetHasVisit"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Visit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#WorksAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VeterinaryClinic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#LicenseNumber"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Specialization"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VetName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#YearsOfExperience"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VeterinaryClinic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VeterinaryClinic">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#ProvidesServiceTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Animal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Address"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Visit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Visit">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VisitEnvolvesTreatment"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Treatment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VisitIsForAnimal"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Animal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VisitLocation"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VeterinaryClinic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VisitReason"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Illness"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VisitedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Veterinarian"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VisitDate"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VisitStatus"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Bark -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Bark">
+        <rdf:type rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Dog"/>
+        <Veterinary_Care:IsOwnedBy rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Sacha"/>
+        <Veterinary_Care:Age rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</Veterinary_Care:Age>
+        <Veterinary_Care:AnimalId>Bark Obama</Veterinary_Care:AnimalId>
+        <Veterinary_Care:HealthStatus>Healthy</Veterinary_Care:HealthStatus>
+        <Veterinary_Care:MicrochipId>MC001</Veterinary_Care:MicrochipId>
+        <Veterinary_Care:VisitDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-01T07:00:00</Veterinary_Care:VisitDate>
+        <Veterinary_Care:Weight rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">30.5</Veterinary_Care:Weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Roberto -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Roberto">
+        <rdf:type rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Cat"/>
+        <Veterinary_Care:IsOwnedBy rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Sacha"/>
+        <Veterinary_Care:Age rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10</Veterinary_Care:Age>
+        <Veterinary_Care:AnimalId>Roberto Duran</Veterinary_Care:AnimalId>
+        <Veterinary_Care:HealthStatus>Healthy</Veterinary_Care:HealthStatus>
+        <Veterinary_Care:MicrochipId>MC002</Veterinary_Care:MicrochipId>
+        <Veterinary_Care:VisitDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-01T07:00:00</Veterinary_Care:VisitDate>
+        <Veterinary_Care:Weight rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10</Veterinary_Care:Weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Sacha -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Sacha">
+        <rdf:type rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Owner"/>
+        <Veterinary_Care:Owns rdf:resource="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Bark"/>
+        <Veterinary_Care:Email>scaha@gmail.com</Veterinary_Care:Email>
+        <Veterinary_Care:OwnerName>Sacha</Veterinary_Care:OwnerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Animal"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#HealthCheck"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Illness"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#InsuranceCompany"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#InsurancePlan"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Location"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Owner"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Treatment"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Veterinarian"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VeterinaryClinic"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Animal"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#HealthCheck"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Illness"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#InsuranceCompany"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#InsurancePlan"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Location"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Owner"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Treatment"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Veterinarian"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VeterinaryClinic"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Visit"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Bird"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Cat"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Dog"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Fish"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#GuineaPig"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Horse"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Rabbit"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Rat"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Reptiles"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#HealthCheck"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Illness"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#InsurancePlan"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Location"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Owner"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Pet"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Treatment"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#Veterinarian"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/j/ontologies/2024/11/Veterinary_Care#VeterinaryClinic"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
