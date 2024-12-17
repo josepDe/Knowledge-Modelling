@@ -16,6 +16,9 @@ The ontology operates in the **veterinary care domain**, which involves pets, th
 -   **Visits**: Captures the relationship between an animal and its visits to a veterinarian.
 -   **Treatments and Diseases**: Tracks medical interventions and conditions affecting animals.
 
+
+![Ontology Graph](Graph.png)
+
 * * * * *
 
 **Literature Review**
